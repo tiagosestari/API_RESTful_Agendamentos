@@ -3,20 +3,28 @@ const db = require("../config/database");
 
 
 exports.createAgendamento = async (req, res) => {
-  const { destinatario, mensagem_texto, midia, data_agendamento } = req.body;
+  const destinatario = req.body.destinatario;
+  const mensagem_texto = req.body.mensagem_texto;
+  const midia = req.body.midia;
+  const data_agendamento = req.body.data_agendamento;
+  const hora_agendamento = req.body.hora_agendamento;
   const status = "agendado";
   const { rows } = await db.query(
-    "INSERT INTO agendamentos (destinatario, mensagem_texto, midia, data_agendamento, status) VALUES ($1, $2, $3, $4, $5)",
-    [destinatario, mensagem_texto, midia, data_agendamento, status]
+    "INSERT INTO agendamentos (destinatario, mensagem_texto, midia, data_agendamento, hora_agendamento, status) VALUES ($1, $2, $3, $4, $5, $6)",
+    [destinatario, mensagem_texto, midia, data_agendamento, hora_agendamento, status]
   );
 
   //RESPONSE PARA TESTAR NO POSTMAN
   res.status(201).send({
-    message: "Product added successfully!",
+    message: "agendamento realizado com sucesso!",
     body: {
-      product: {destinatario, mensagem_texto, midia, data_agendamento, status}
+      agendamento: {destinatario, mensagem_texto, midia, data_agendamento, hora_agendamento, status}
     },
   });
+};
+
+exports.formAgendamento = (req, res) => {
+    res.sendFile(__dirname + '/views/criaragendamento.html');
 };
 
 //LISTA TODOS OS AGENDAMENTOS DO MAIS PRÓXIMO AO COM DATA MAIS LONGE NO FUTURO.

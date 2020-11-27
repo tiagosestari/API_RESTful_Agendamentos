@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <h1>Agendar mensagem</h1>
+
+        <form method="POST" action="/api/agendamentos">
+            <input type="text" name="destinatario" id="destinatario" />
+            <input type="textarea" name="mensagem_texto" id="mensagem_texto" />
+            <select type="select" name="midia" id="midia">
+                <option value="sms">SMS</option>
+                <option value="email">Email</option>
+                <option value="whatsapp">whatsapp</option>
+                <option value="push">Push</option>
+            </select>
+            <input type="date" id="data_agendamento" name="data_agendamento">
+            <input type="time" id="hora_agendamento" name="hora_agendamento">
+            <input type="submit" value="Agendar Mensagem">
+        </form>
+    </body>
+</html>
