@@ -5,6 +5,7 @@ const app = express();
 
 
 const index = require('./routes/index');
+const agendamentosRoute = require('./routes/agendamento.routes');
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +14,6 @@ app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
 app.use(index);
-
+app.use('/api/', agendamentosRoute);
 
 module.exports = app;
