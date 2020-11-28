@@ -30,8 +30,7 @@ exports.formAgendamento = (req, res) => {
 //LISTA TODOS OS AGENDAMENTOS DO MAIS PRÓXIMO AO COM DATA MAIS LONGE NO FUTURO.
 exports.listarAgendamentos = async (req, res) => {
     const response = await db.query('SELECT * FROM agendamentos ORDER BY data_agendamento');
-    res.status(200).send(response.rows)
-
+    res.status(200).json(response.rows)
 }
 
 

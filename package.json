@@ -1,18 +1,21 @@
 {
-  "name": "CRUD RESTful API - Agendamentos",
+  "name": "crud-restful-api-agendamentos",
   "version": "1.0.0",
   "description": "Aplicação CRUD RESTful com Node.js, Express e PostgresSQL para agendamentos de envio de mensagens",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -u tdd"
   },
   "keywords": [],
   "author": "Tiago Sestari",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "husky": "^4.3.0",
+    "mocha": "^8.2.1",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
