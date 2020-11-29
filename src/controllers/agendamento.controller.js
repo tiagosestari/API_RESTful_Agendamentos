@@ -38,5 +38,20 @@ exports.listarAgendamentos = async (req, res) => {
 exports.deletarAgendamentos = async (req, res) => {
     const idAgendamento = parseInt(req.params.id)
     await db.query('DELETE FROM agendamentos WHERE mensagemid = $1', [idAgendamento]);
-    res.status(200).send({message: "Agendamento deletado", idAgendamento}) 
+    res.status(200).send({message: "Agendamento deletado", idAgendamento})
+    
+};
+
+//INTERFACE PARA DELETAR NO BROWSER
+exports.confirmarDelete = async (req, res) => {
+  const idAgendamento = parseInt(req.params.id)
+  const response = await db.query('SELECT * FROM agendamentos WHERE mensagemid = $1', [idAgendamento]);
+  
+  if (response.rows[0] !== undefined) {
+  res.render(__dirname + "/views/deletaragendamento", {agendamento: response.rows[0]});
+  } else {
+    res.status(200).send({message: "Não há agendamento com esse id", idAgendamento})
+  }
+ 
+  //res.status(200).json(response.rows) 
 };

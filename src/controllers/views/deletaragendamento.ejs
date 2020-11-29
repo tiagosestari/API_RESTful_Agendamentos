@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        
+            function deleteAgendamento() {
+                
+                const options = {
+                    method: 'DELETE'
+                }
+                
+                return fetch(window.location.href, options)
+                .then(res => res.json())
+                .then(res => console.log(res))
+                
+                
+            }
+        
+        </script>
+    </head>
+    <body>
+
+        <h1>Tem certeza que deseja apagar a o agendamento a seguir?</h1>
+
+        <h3>ID: </h3><%= agendamento.mensagemid %>
+        <h3>Destinatário: </h3><%= agendamento.destinatario %>
+        <br>
+        <br>
+    <button onclick="deleteAgendamento()">Deletar</button>
+
+
+    </body>
+</html>

@@ -13,6 +13,7 @@ router.get('/veragendamentos', agendamentoController.listarAgendamentos)
 
 //USANDO O MÉTODO DELETE PARA APAGAR AGENDAMENTOS
 router.delete('/deletaragendamento/:id', agendamentoController.deletarAgendamentos)
+router.get('/deletaragendamento/:id', agendamentoController.confirmarDelete)
 
 
 module.exports = router;

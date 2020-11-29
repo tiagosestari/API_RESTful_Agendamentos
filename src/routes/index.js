@@ -2,6 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
+
+
+
 //TESTE DE FUNCIONAMENTO DO SERVER
 router.get('/api', (req, res) => {
   res.status(200).send({
