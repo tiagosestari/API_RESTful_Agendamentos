@@ -44,8 +44,8 @@ uma segunda variável de Hora foi criada.
   criá-lo e colocar nele a variável DATABASE_URL com a seguinte estrutura DATABASE_URL=postgres://{db_username}:{db_password}@{host}:{port}/{db_name}
   substituindo com as suas credenciais do servidor local do PostgreSQL.
 - 4: Agora você pode usar o comando npm start para rodar o servidor e verificar o funcionamento dele.
- -  4.1: Para facilitar a visualização há um forms para fazer o POST de novos agendamentos e uma tela de confirmação para fazer o DELETE de agendamentos existentes.
- -  4.2: Também é possível testar enviando requests diretamente através de programas como o POSTMAN.
+ --  4.1: Para facilitar a visualização há um forms para fazer o POST de novos agendamentos e uma tela de confirmação para fazer o DELETE de agendamentos existentes.
+ --  4.2: Também é possível testar enviando requests diretamente através de programas como o POSTMAN.
 - 5: O comando npm test irá testar a conexão com todos os endpoints da API.
 
 #### Forma 2:
