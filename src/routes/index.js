@@ -3,6 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 
+//REDIRECIONANDO ROOT PARA /API
+router.get('/', (req, res) => {
+  res.redirect('/api');
+});
 
 
 //TESTE DE FUNCIONAMENTO DO SERVER
